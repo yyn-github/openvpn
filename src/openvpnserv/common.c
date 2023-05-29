@@ -224,7 +224,9 @@ GetLastErrorText()
 
     if (len == 0 || (long) _countof(buf) < (long) len + 14)
     {
-        buf[0] = TEXT('\0');
+        //buf[0] = TEXT('\0');
+        //wsprintf(buf, ("Error Code:%d"), error);
+        openvpn_swprintf(buf, _countof(buf), TEXT("error code:(%d)"), error);
     }
     else
     {
